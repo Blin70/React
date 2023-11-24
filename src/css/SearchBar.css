@@ -1,0 +1,30 @@
+.search-bar {
+    border-bottom: 1px solid lightgray;
+    padding: 10px;
+}
+
+.search-bar form{
+    display: flex;
+}
+
+.search-bar input{
+    width: 15rem;
+    height: 2rem;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-right: none;
+    border-color: black !important;
+    font-size: larger;
+    padding-left: 5px;
+}
+
+.search-bar input:focus-visible{
+    outline: none;
+}
+
+.search-bar button{
+    width: 5rem;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-left: none;
+}
