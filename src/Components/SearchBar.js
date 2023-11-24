@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { GoSearch } from "react-icons/go";
+import '../css/SearchBar.css'
 
 function SearchBar(){
     const [term, setTerm] = useState("");
@@ -12,9 +14,12 @@ function SearchBar(){
     }
 
     return(
-        <form onSubmit={handleSubmit}>
-            <input value={term} type="text" onChange={handleChange}></input>
-        </form>
+        <div className='search-bar'>
+            <form onSubmit={handleSubmit}>
+                <input value={term} type="text" onChange={handleChange}></input>
+                <button><GoSearch /></button>
+            </form> 
+        </div>
     ) 
 }
 
