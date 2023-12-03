@@ -1,13 +1,15 @@
+import Link from "./Link";
+
 function HamburgerMenu() {
     const list = [
-        {name:'Home', link:'/'},    //links to be added
-        {name:'Profile', link:'/'},
-        {name:'About', link:'/'},
-        {name:'Help', link:'/'},
+        {name:'Home', link:'/App'},    
+        {name:'Profile', link:'/Profile'},
+        {name:'About', link:'/About'},
+        {name:'Help', link:'/Help'},
     ];
 
     const rendered_list = list.map((i)=>{
-        return <li key={i.name} className="w-full h-20 text-4xl list-none text-center cursor-pointer leading-loose rounded-2xl hover:bg-stone-300">{i.name}</li>
+        return <Link key={i.name} to={i.link}>{i.name}</Link>
     });
 
     return (
