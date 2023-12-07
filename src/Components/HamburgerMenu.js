@@ -2,7 +2,7 @@ import Link from "./Link";
 
 function HamburgerMenu() {
     const list = [
-        {name:'Home', link:'/App'},    
+        {name:'Home', link:'/Home'},    
         {name:'Profile', link:'/Profile'},
         {name:'About', link:'/About'},
         {name:'Help', link:'/Help'},
