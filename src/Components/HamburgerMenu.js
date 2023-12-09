@@ -9,7 +9,7 @@ function HamburgerMenu() {
     ];
 
     const rendered_list = list.map((i)=>{
-        return <Link key={i.name} to={i.link}>{i.name}</Link>
+        return <Link classNames='w-full h-20 text-4xl list-none text-center cursor-pointer leading-loose rounded-2xl hover:bg-stone-300 list-item p-0 m-0 no-underline text-inherit' key={i.name} to={i.link}>{i.name}</Link>
     });
 
     return (
