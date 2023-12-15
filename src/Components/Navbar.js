@@ -1,10 +1,10 @@
 import SearchBar from "./SearchBar";
 import Hamburger from "./Hamburger";
 
-function Navbar(){
+function Navbar({onSubmit}){
     return (
         <div>
-            <SearchBar />
+            <SearchBar onSubmit={onSubmit} />
             <Hamburger/>
         </div>
     );
