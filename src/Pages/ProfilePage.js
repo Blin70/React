@@ -1,26 +1,24 @@
-import { useState } from "react";
+import { useAuth0 } from "@auth0/auth0-react";
+import LoginButton from "../Components/User/Login";
+import LogoutButton from "../Components/User/Logout";
 
 function ProfilePage() {
-    const [user, setUser] = useState({
-        name:"",
-        username:"",
-        email:"",
-        password:""
-    });
+    const { user, isAuthenticated, isLoading } = useAuth0();
 
-    const handleChange = (event) => {
-        setUser(prev => ({...prev, [event.target.name]:event.target.value}))
-    };
+    if(isLoading){
+        return <div>Loading...</div>;
+    }
+    
     return(
-        <div>
-            <input onChange={handleChange} placeholder="Name" type="text" name="name" autoComplete="off"/>
-            <input onChange={handleChange} placeholder="Username" type="text" name="username" autoComplete="off"/>
-            <input onChange={handleChange} placeholder="Email" type="text" name="email" autoComplete="off"/>
-            <input onChange={handleChange} placeholder="Password" type="text" name="password" autoComplete="off"/>
-            <br/>
-            {`{name:${user.name} , username:${user.username} , email:${user.email} , password:${user.password}}`}
-        </div>
-    );
+        isAuthenticated ? (
+            <div className="text-center w-full">
+                <img src={user.picture} alt={user.name}></img>
+                <h2>{user.name}</h2>
+                <p>{user.email}</p>
+                <LogoutButton/>
+            </div>
+        )  : <LoginButton/> 
+    );  
 };
 
 export default ProfilePage;
