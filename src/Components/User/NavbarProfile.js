@@ -9,8 +9,8 @@ function Navbar_Profile() {
     };
 
     return(
-            <img onClick={handleClick} src={isAuthenticated ? user.picture : Default} alt="profile" className="absolute cursor-pointer left-6 top-1.5 rounded-full h-16 w-16"/>
-        )
+            <img onClick={isAuthenticated ? handleClick : null} src={isAuthenticated ? user.picture : Default} alt="profile" className="absolute cursor-pointer left-6 top-1.5 rounded-full h-16 w-16"/>
+        );
 };  
 
 export default Navbar_Profile;
